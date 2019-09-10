@@ -8,17 +8,21 @@ const children = [
   createElement('img', {
     class: 'home__img',
     id:'img',
-    src: ''
+    src: './letters/blank.jpg'
+  }),createElement('img', {
+    class: 'home__img-close',
+    id:'img-close',
+    src: './letters/x.png'
   }),
   createElement('section', { class: 'home__buttons' }, [
-    `<div id="v" clas="home__buttons-letter">V</div>`,
-    `<div id="t" clas="home__buttons-letter">T</div>`,
-    `<div id="r" clas="home__buttons-letter">R</div>`,
-    `<div id="e" clas="home__buttons-letter">E</div>`,
-    `<div id="w" clas="home__buttons-letter">W</div>`,
-    `<div id="o" clas="home__buttons-letter">O</div>`,
-    `<div id="l" clas="home__buttons-letter">L</div>`,
-    `<div id="i" clas="home__buttons-letter">I</div>`
+    `<span id="v" clas="home__buttons-letter">V</span>`,
+    `<span id="t" clas="home__buttons-letter">T</span>`,
+    `<span id="r" clas="home__buttons-letter">R</span>`,
+    `<span id="e" clas="home__buttons-letter">E</span>`,
+    `<span id="w" clas="home__buttons-letter">W</span>`,
+    `<span id="o" clas="home__buttons-letter">O</span>`,
+    `<span id="l" clas="home__buttons-letter">L</span>`,
+    `<span id="i" clas="home__buttons-letter">I</span>`
   ])
 ]
 
@@ -38,7 +42,7 @@ const letterW = document.getElementById('w')
 const letterO = document.getElementById('o')
 const letterL = document.getElementById('l')
 const letterI = document.getElementById('i')
-
+const imgClose=document.getElementById('img-close');
 const img = document.getElementById('img')
 
 
@@ -75,8 +79,11 @@ letterL.addEventListener('click', e => {
   e.preventDefault()
   showImage("l")
 })
-letterL.addEventListener('click', e => {
+letterI.addEventListener('click', e => {
   e.preventDefault()
   showImage("i")
 })
-
+imgClose.addEventListener('click', e => {
+  e.preventDefault()
+  img.src="./letters/blank.jpg";
+})
